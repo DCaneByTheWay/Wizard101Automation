@@ -1,13 +1,14 @@
 from pynput.keyboard import Key, Controller, Listener
 import pyautogui
 import mouse
+import random
 import time
 
 myKeyboard = Controller()
 
 # gets image path given name
 def getImagePath(imageName):
-    imageFolderPath = 'Wizard101Automation\\SpellImages\\{name}.png'
+    imageFolderPath = '.\\SpellImages\\{name}.png'
     return imageFolderPath.format(name = imageName)
 
 # returns tuple, the image on screen, and a boolean representing whether or not it exists
@@ -30,6 +31,25 @@ def locateImage(imageName, isEnchanted = False):
 
     return res, exists
 
+def getRandomX():
+
+    x = random.randint(150,400)
+    
+    if random.randint(0,1) == 0:
+        x = x * -1
+    return x
+
+def getRandomY():
+    
+    y = random.randint(200,600)
+    
+    if random.randint(0,1) == 0:
+        y = y * -1
+    return y
+
+def getRandomDuration():
+    return random.randint(15, 50) / 100
+
 # given image name, move mouse to the image on screen, returns boolean of success
 def moveToImage(imageName):
     res, exists = locateImage(imageName)
@@ -37,7 +57,7 @@ def moveToImage(imageName):
     if exists:
         print(f'Clicked {imageName}!')
         spellLocation = pyautogui.center(res)
-        pyautogui.moveTo(spellLocation)
+        pyautogui.moveTo(spellLocation, duration = getRandomDuration())
         return True
     else:
         print(f'Failed to find {imageName}')
@@ -50,7 +70,7 @@ def clickSpell(spellName, target=None):
 
     if imageFound:
         mouse.click()
-        mouse.move(0, -200, absolute = False, duration = 0.3)
+        mouse.move(getRandomX(), getRandomY(), absolute = False, duration = getRandomDuration())
         time.sleep(0.5)
 
     # recursive calling to click on target if there is one
