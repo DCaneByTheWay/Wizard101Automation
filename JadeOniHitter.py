@@ -1,118 +1,48 @@
+from re import L
 import time
 from AutomationSetup import *
+
+def resetAndJoinOni():
+    # battle -> obelisk
+    pressReleaseKey('a', 0.80)
+    pressReleaseKey('w', 5.5)
+    pressReleaseKey('x', 0.1)
+    time.sleep(0.5)                 # extra time waiting for x presses and space presses due to game time
+    pressReleaseKey('x', 0.1)
+    time.sleep(0.5)
+    pressReleaseKey(Key.space, 0.1)
+    time.sleep(0.5)
+
+    # obelisk -> oni
+    pressReleaseKey('a', 0.73)
+    pressReleaseKey('w', 6.5)
+
+    # wait and check again to see if we made it to oni
+    time.sleep(1)
+    if outOfBattle:
+        # if we didn't make it, adjust a little
+        # I've found 2 or 3 outcomes, and this accounts for them
+        pressReleaseKey('a', 0.85)
+        pressReleaseKey('w', 2)
 
 time.sleep(1.5)
 
 jadeOniPosition = 'EnemyOne'
+# variable to hold value to know whether or not we should be looking for battle end
+isBattleOccuring = False
 
 while time.sleep(1) == None:
 
     if inCardSelect():
+        if not isBattleOccuring:
+            isBattleOccuring = True
+
         # glowbug first if possible (it can oneshot oni no buffs)
-    
         if trySpell('GlowbugSquall'): continue
         if trySpell('Feint', jadeOniPosition, noEnchant=True): continue
         if trySpell('Triton', jadeOniPosition): continue
         passRound()
 
-
-
-    #myKeyboard.press('w')
-    #time.sleep(0.1)
-    #myKeyboard.release('w')
-
-'''
-while True:
-    time.sleep(3)
-    mouse.move(screenLength / 2, screenHeight / 2)
-    mouse.click('left')
-   ''' 
-
-
-
-'''
-ctrlPressed = False
-altPressed = False
-comboPressed = False
-
-
-
-
-def writeToFile(key):
-    
-    keydata = str(key)
-    with open("log.txt", 'a') as f:
-        f.write(keydata)
-
-    if keydata == "'p'":
-        exit()
-        
-def on_press(key):
-
-    global ctrlPressed
-    global altPressed
-    global comboPressed
-
-    keydata = str(key)
-
-    if keydata == 'Key.ctrl_l':
-        ctrlPressed = True
-
-    if keydata == 'Key.alt_l':
-        altPressed = True
-
-    if ctrlPressed and altPressed:
-        comboPressed = True
-
-    if comboPressed:
-        time.sleep(0.75)
-        myKeyboard.press(Key.ctrl)
-
-        myKeyboard.tap('a')
-        time.sleep(0.125)
-        myKeyboard.tap('c')
-
-        myKeyboard.release(Key.ctrl)
-
-        time.sleep(0.125)
-        clipboardContents = pyperclip.paste()
-
-        binaryStr = getBinary(clipboardContents);
-
-        print(binaryStr)
-
-        myKeyboard.type(binaryStr)
-        #myKeyboard.tap(Key.enter)
-
-
-        comboPressed = False
-        altPressed = False
-        ctrlPressed = False
-
-def on_release(key):
-    keydata = str(key)
-
-
-    global ctrlPressed
-    global altPressed
-    if keydata == 'Key.ctrl_l':
-        ctrlPressed = False
-
-    if keydata == 'Key.alt_l':
-        altPressed = False
-
-with Listener(
-        on_press=on_press,
-        on_release=on_release) as listener:
-    listener.join()
-
-
-
-time.sleep(2)
-
-myKeyboard
-myKeyboard.type("amogus")
-myKeyboard.press(Key.enter)
-
-print('finished')
-'''
+    if outOfBattle() and isBattleOccuring:
+        resetAndJoinOni()
+        isBattleOccuring = False

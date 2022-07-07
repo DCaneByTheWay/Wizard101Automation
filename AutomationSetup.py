@@ -56,10 +56,10 @@ def moveToImage(imageName):
     res, exists = locateImage(imageName)
 
     if exists:
-        print(f'Clicked {imageName}!')
         spellLocation = pyautogui.center(res)
         pyautogui.moveTo(spellLocation, duration = getRandomDuration())
         time.sleep(0.1)
+        print(f'Clicked {imageName}!')
         return True
     else:
         print(f'Failed to find {imageName}')
@@ -97,6 +97,10 @@ def inCardSelect():
 def passRound():
     clickSpell('PassButton')
 
+# returns whether or not we are out of battle, based on pet icon button existance
+def outOfBattle():
+    return True if spellIsAvailable('PetIcon') else False
+
 # does everything required to cast the given spell, returns success as boolean
 def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
 
@@ -119,3 +123,10 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
         clickSpell(target)
 
     return success
+
+# presses key for duration
+def pressReleaseKey(key, duration):
+    time.sleep(0.2)
+    myKeyboard.press(key)
+    time.sleep(duration)
+    myKeyboard.release(key)
