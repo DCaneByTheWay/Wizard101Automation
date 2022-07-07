@@ -5,27 +5,17 @@ time.sleep(1.5)
 
 jadeOniPosition = 'EnemyOne'
 
-while True:
-    if spellIsAvailable('Epic') or spellIsAvailable('EnchantedGlowbugSquall') or spellIsAvailable('EnchantedTriton'):
+while time.sleep(1) == None:
 
+    if inCardSelect():
         # glowbug first if possible (it can oneshot oni no buffs)
-        if spellIsAvailable('GlowbugSquall') or spellIsAvailable('EnchantedGlowbugSquall'):
-            if spellIsAvailable('GlowbugSquall'):
-                clickSpell('Epic')
-                clickSpell('GlowbugSquall')
+    
+        if trySpell('GlowbugSquall'): continue
+        if trySpell('Feint', jadeOniPosition, noEnchant=True): continue
+        if trySpell('Triton', jadeOniPosition): continue
+        passRound()
 
-            clickSpell('EnchantedGlowbugSquall')
-            continue
-            
-        if spellIsAvailable('Feint'):
-            clickSpell('Feint', jadeOniPosition)
-        else:
-            if spellIsAvailable('Triton'):
-                clickSpell('Epic')
-                clickSpell('Triton')
-            clickSpell('EnchantedTriton', jadeOniPosition)
-    else:
-        time.sleep(2)
+
 
     #myKeyboard.press('w')
     #time.sleep(0.1)

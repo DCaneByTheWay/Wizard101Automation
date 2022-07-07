@@ -31,6 +31,7 @@ def locateImage(imageName, isEnchanted = False):
 
     return res, exists
 
+# random x, y, and duration functions so i dont get banned :)
 def getRandomX():
 
     x = random.randint(150,400)
@@ -48,7 +49,7 @@ def getRandomY():
     return y
 
 def getRandomDuration():
-    return random.randint(15, 50) / 100
+    return random.randint(25, 40) / 100
 
 # given image name, move mouse to the image on screen, returns boolean of success
 def moveToImage(imageName):
@@ -58,6 +59,7 @@ def moveToImage(imageName):
         print(f'Clicked {imageName}!')
         spellLocation = pyautogui.center(res)
         pyautogui.moveTo(spellLocation, duration = getRandomDuration())
+        time.sleep(0.1)
         return True
     else:
         print(f'Failed to find {imageName}')
@@ -70,17 +72,50 @@ def clickSpell(spellName, target=None):
 
     if imageFound:
         mouse.click()
-        mouse.move(getRandomX(), getRandomY(), absolute = False, duration = getRandomDuration())
+        # if we click an enemy icon, dont move (not on a card)
+        if spellName.find('Enemy') == -1:
+            mouse.move(getRandomX(), getRandomY(), absolute = False, duration = getRandomDuration())
         time.sleep(0.5)
 
     # recursive calling to click on target if there is one
     if target != None:
         clickSpell(target)
 
-
+# returns true if spell (or imagge) is on screen, false otherwise
 def spellIsAvailable(spellName):
     res, exists = locateImage(spellName)
 
     if exists:
         return True
     return False
+
+# returns whether or not we are in card select, based on pass button existance
+def inCardSelect():
+    return True if spellIsAvailable('PassButton') else False
+
+# passes round
+def passRound():
+    clickSpell('PassButton')
+
+# does everything required to cast the given spell, returns success as boolean
+def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
+
+    success = False
+
+    if isItemCard or noEnchant:
+        if spellIsAvailable(spellName):
+            clickSpell(spellName)    
+            success = True
+
+    elif spellIsAvailable(spellName) or spellIsAvailable('Enchanted{}'.format(spellName)):
+
+        if spellIsAvailable(spellName):
+            clickSpell('Epic')
+            clickSpell(spellName)
+        clickSpell('Enchanted{}'.format(spellName))
+        success = True
+    
+    if target != None and success == True:
+        clickSpell(target)
+
+    return success
