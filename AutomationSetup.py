@@ -49,7 +49,7 @@ def getRandomY():
     return y
 
 def getRandomDuration():
-    return random.randint(25, 40) / 100
+    return random.randint(20, 35) / 100
 
 # given image name, move mouse to the image on screen, returns boolean of success
 def moveToImage(imageName):

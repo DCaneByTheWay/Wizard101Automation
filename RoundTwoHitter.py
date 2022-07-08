@@ -3,30 +3,25 @@ from AutomationSetup import *
 
 time.sleep(1.5)
 
+hasHit = False
+
 # note that if enchant is already clicked, then no attack spells will be in grayscale
 # therefore we must see if spell is available before enchant is clicked
 while True:
-    # if epic is available, then we are in battle
-    if spellIsAvailable('Epic') or spellIsAvailable('EnchantedStormLord') or spellIsAvailable('EnchantedSoundOfMusicology'):
+    time.sleep(1)
 
-        if spellIsAvailable('Frenzy'):
-            clickSpell('Frenzy');
+    if inCardSelect():
+
+        if trySpell('Frenzy'): continue
+        if trySpell('SoundOfMusicology'):
+            hasHit = True 
+            continue
+        if trySpell('StormLord'):
+            hasHit = True 
             continue
 
-        if spellIsAvailable('SoundOfMusicology'):
-            clickSpell('Epic')
-            clickSpell('SoundOfMusicology')
-            clickSpell('EnchantedSoundOfMusicology')
+        if hasHit:
+            trySpell('Tempest')
+            continue
 
-        elif spellIsAvailable('EnchantedSoundOfMusicology'):
-            clickSpell('EnchantedSoundOfMusicology')
-
-        elif spellIsAvailable('StormLord'):
-            clickSpell('Epic')
-            clickSpell('StormLord')
-            clickSpell('EnchantedStormLord')
-            
-        else:
-            clickSpell('EnchantedStormLord')
-    else:
-        time.sleep(2)
+        passRound()
