@@ -24,3 +24,10 @@ def move(key, duration):
     myKeyboard.press(key)
     time.sleep(duration)
     myKeyboard.release(key)
+
+
+time.sleep(1)
+
+move('a', 0.65)
+moveAndUndo('w', 0.65)
+move('d', 0.65)

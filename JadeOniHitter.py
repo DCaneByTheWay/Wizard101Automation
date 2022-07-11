@@ -17,15 +17,21 @@ def resetAndJoinOni():
     pressReleaseKey('w', 6.5)
 
     # wait and check again to see if we made it to oni
-    time.sleep(1)
+    time.sleep(1.5)
     if outOfBattle:
         # if we didn't make it, adjust a little
         # I've found 2 or 3 outcomes, and this accounts for them
         pressReleaseKey('a', 0.85)
         pressReleaseKey('w', 2.5)
+    
+    time.sleep(1)
+    if outOfBattle:
+        pressReleaseKey('d', 0.2)
+        pressReleaseKey('s', 3)
 
 time.sleep(1.5)
 
+# position of jade oni
 jadeOniPosition = 'EnemyOne'
 # variable to hold value to know whether or not we should be looking for battle end
 isBattleOccuring = False
@@ -44,15 +50,15 @@ while True:
             hasHit = True
             continue
 
-        if hasHit:
-            trySpell('Tempest')
-            continue
-
-        if trySpell('Feint', jadeOniPosition, noEnchant=True): continue
         if trySpell('Triton', jadeOniPosition): 
             hasHit = True
             continue
 
+        if hasHit:
+            if trySpell('Tempest'):
+                continue
+
+        if trySpell('Feint', jadeOniPosition, noEnchant=True): continue
 
         passRound()
 

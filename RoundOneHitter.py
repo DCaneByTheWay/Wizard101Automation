@@ -11,5 +11,7 @@ while True:
     if inCardSelect():
 
         if trySpell('GlowbugSquall'): continue
+        # uncomment line below if and only if you want to sacrifice time for damage
+        if trySpell('SquallWyvern', isItemCard=True): continue
         if trySpell('Tempest'): continue
         passRound()
