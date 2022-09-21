@@ -8,9 +8,6 @@ hasHit = False
 # variable to hold value to know whether or not we should be looking for battle end
 isBattleOccuring = False
 
-# note that if enchant is already clicked, then no attack spells will be in grayscale
-# therefore we must see if spell is available before enchant is clicked
-
 while True:
 
     time.sleep(1)
@@ -30,7 +27,6 @@ while True:
             hasHit = True
             continue
         
-
         passRound()
         
     if outOfBattle() and isBattleOccuring:
