@@ -1,4 +1,4 @@
-from pynput.keyboard import Key, Controller, Listener
+from pynput.keyboard import Controller, Key
 import pyautogui
 import mouse
 import random
@@ -121,6 +121,7 @@ def getEnemyCount():
     
     return count
 
+# returns final enemy alive (if enemiesAlive > 1 then return first alive from left to right)
 def getLastSurvivingEnemy():
 
     enemyOneAlive, enemyTwoAlive, enemyThreeAlive, enemyFourAlive = getAllEnemiesLifeStatus()
@@ -178,9 +179,32 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
 
     return success
 
+def tryAura(spellName):
+    return trySpell(spellName, noEnchant=True)
+
+
 # presses key for duration
 def pressReleaseKey(key, duration):
     time.sleep(0.2)
     myKeyboard.press(key)
     time.sleep(duration)
     myKeyboard.release(key)
+
+def afkRun(direction='left'):
+    
+    if direction == 'right':
+        direction = 'd'
+    else:
+        direction = 'a'
+
+    time.sleep(0.2)
+    myKeyboard.press(direction)
+    myKeyboard.press('w')
+    time.sleep(0.1)
+    myKeyboard.press(Key.alt_l)
+    time.sleep(0.2)
+    myKeyboard.release(direction)
+    myKeyboard.release('w')
+    time.sleep(0.1)
+    myKeyboard.release(Key.alt_l)
+    

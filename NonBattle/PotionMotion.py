@@ -1,8 +1,8 @@
 import time
 import mouse
 
-# upper left corner of grid - 650 285
-# bottom right corner of grid - 1270 815
+# upper left corner of upper left tile - 650 285
+# bottom right corner of upper right tile - 1270 815
 
 initialX = 650
 initialY = 285
