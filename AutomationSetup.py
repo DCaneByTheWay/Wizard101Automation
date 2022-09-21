@@ -105,21 +105,12 @@ def enemyAlive(enemyName):
 def getAllEnemiesLifeStatus():
     return enemyAlive('EnemyOne'), enemyAlive('EnemyTwo'), enemyAlive('EnemyThree'), enemyAlive('EnemyFour')
 
+# returns number of enemies in battle
 def getEnemyCount():
-    count = 0
 
     enemyOneAlive, enemyTwoAlive, enemyThreeAlive, enemyFourAlive = getAllEnemiesLifeStatus()
 
-    if enemyOneAlive:
-        count = count + 1
-    if enemyTwoAlive:
-        count = count + 1
-    if enemyThreeAlive:
-        count = count + 1
-    if enemyFourAlive:
-        count = count + 1
-    
-    return count
+    return enemyOneAlive + enemyTwoAlive + enemyThreeAlive + enemyFourAlive
 
 # returns final enemy alive (if enemiesAlive > 1 then return first alive from left to right)
 def getLastSurvivingEnemy():
