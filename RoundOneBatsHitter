@@ -30,6 +30,6 @@ while True:
         passRound()
         
     if outOfBattle() and isBattleOccuring:
-        afkRun('left')
+        afkRun()
         hasHit = False
         isBattleOccuring = False

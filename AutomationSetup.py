@@ -57,11 +57,19 @@ def getRandomDuration():
     return random.randint(20, 35) / 100
 
 # given image name, move mouse to the image on screen, returns boolean of success
-def moveToImage(imageName):
+def moveToImage(imageName, xOff=0, yOff=0):
     res, exists = locateImage(imageName)
 
     if exists:
         spellLocation = pyautogui.center(res)
+
+        # add offset 
+        # (cannot update tuple, so tuple>list>tuple)
+        temp = list(spellLocation)
+        temp[0] += xOff
+        temp[1] += yOff
+        spellLocation = tuple(temp)
+
         pyautogui.moveTo(spellLocation, duration = getRandomDuration())
         time.sleep(0.2)
         print(f'Clicked {imageName}!')
@@ -89,6 +97,10 @@ def clickSpell(spellName, target=None):
         clickSpell(target)
 
     return success
+
+def clickImage(imageName):
+    moveToImage(imageName)
+    mouse.click()
 
 # returns true if spell (image representing) is on screen, false otherwise
 def spellIsAvailable(spellName):
@@ -173,7 +185,6 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
 def tryAura(spellName):
     return trySpell(spellName, noEnchant=True)
 
-
 # presses key for duration
 def pressReleaseKey(key, duration):
     time.sleep(0.2)
@@ -199,3 +210,99 @@ def afkRun(direction='left'):
     time.sleep(0.1)
     myKeyboard.release(Key.alt_l)
     
+def potionMotionSetup():
+
+    # open friends list
+    pressReleaseKey('f', 0.2)
+
+    # tp to friend with this icon 
+    moveToImage('TopFriendIcon', xOff=random.randint(50,175))
+    mouse.click()
+    time.sleep(0.5)
+
+    clickImage('GoToLocationIcon')
+    time.sleep(0.5)
+
+    clickImage('YesButton')
+    time.sleep(0.5)
+
+    # move mouse out of the way
+    moveToImage('QuickChatIcon')
+    time.sleep(10)
+
+    # enter potion motion
+    pressReleaseKey('x', 0.2)
+    time.sleep(1.5)
+
+    clickImage('PotionMotionButton')
+    time.sleep(10)
+
+    clickImage('MinigamePlayButton')
+    time.sleep(1.5)
+
+def getTileLocation(tileX, tileY):
+    # upper left corner of upper left tile - 650 285
+    # bottom right corner of upper right tile - 1270 815
+
+    initialX = 650
+    initialY = 285
+    tileWidth = 88.571
+    tileHeight = 88.333
+
+    x = initialX + tileWidth * tileX - (tileWidth / 2)
+    y = initialY + tileHeight * tileY - (tileHeight / 2)
+
+    return x, y
+
+def playPotionMotion():
+
+    time.sleep(1.5)
+
+    # verticle movement
+    for x in range(1, 8):
+        startX, startY = getTileLocation(x, 1)
+        for y in range(1, 7):
+            endX, endY = getTileLocation(x, y)
+            mouse.drag(startX, startY, endX, endY, duration=0.05)
+            time.sleep(0.05)
+
+    # horizontal movement
+    for y in range(1, 7):
+        startX, startY = getTileLocation(1, y)
+        for x in range(1, 8):
+            endX, endY = getTileLocation(x, y)
+            mouse.drag(startX, startY, endX, endY, duration=0.05)
+            time.sleep(0.05)
+
+def exitPotionMotion():
+
+    clickImage('MinigameXButton')
+    time.sleep(1.5)
+
+    clickImage('MinigameContinueButton')
+    time.sleep(1.5)
+
+    clickImage('MinigameXButton')
+    time.sleep(10)
+
+def usePotion():
+    clickImage('FullPotionBottle')
+
+def takeMark():
+    clickImage('TakeMarkButton')
+    time.sleep(10)
+
+def placeMark():
+    clickImage('PlaceMarkButton')
+    time.sleep(1)
+    
+def refillPotions():
+    usePotion()
+    
+    potionMotionSetup()
+    playPotionMotion()
+    exitPotionMotion()
+
+    takeMark()
+    placeMark()
+    afkRun()
