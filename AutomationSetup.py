@@ -21,23 +21,18 @@ def getImagePath(imageName):
 # returns tuple, the image on screen, and a boolean representing whether or not it exists
 def locateImage(imageName, isEnchanted = False):
 
+    # high confidence by default
     confidenceLvl = 0.9
-
-    '''# if 'Enemy' exists in the string
-    if imageName.find('Enemy') != -1:
-        print('searching', imageName)
-        confidenceLvl = 0.8'''
-
-    # THIS MAY BE REMOVED LATER
-    # we need higher confidence if enchanted since it is similar to another card and can also be shiny
     
     # if spell name contains enchanted
-    if imageName.find('Enchanted') != -1:
+    if 'Enchanted' in imageName:
         isEnchanted = True
 
+    # lower confidence level if enchanted due to shiny card making it harder to find
     if isEnchanted:
         confidenceLvl = 0.7
 
+    # get and return location of image, and boolean of success    
     res = pyautogui.locateOnScreen(getImagePath(imageName), grayscale=False, confidence=confidenceLvl)
     exists = False if res == None else True
 
@@ -67,6 +62,7 @@ def getRandomDuration():
 def moveToImage(imageName, xOff=0, yOff=0):
     res, exists = locateImage(imageName)
 
+    # if it exists, then move to img and print success in terminal, print failure otherwise
     if exists:
         imageLocation = pyautogui.center(res)
 
@@ -90,6 +86,7 @@ def moveToImage(imageName, xOff=0, yOff=0):
             # move to top middle of monitor
             pyautogui.moveTo((MONITOR_DIMENSIONS[0] / 2, 50), duration = getRandomDuration())
 
+        # move to the image
         pyautogui.moveTo(imageLocation, duration = getRandomDuration())
         time.sleep(0.2)
         print(f'Clicked {imageName}!')
@@ -99,41 +96,47 @@ def moveToImage(imageName, xOff=0, yOff=0):
         return False
 
 # finds and clicks spell from name
-# overloaded valye target, if there is a target for spell, click target after
 def clickSpell(spellName, target=None):
     imageFound = moveToImage(spellName)
     success = False
 
     if imageFound:
         mouse.click()
-        # if we click an enemy icon, dont move (not on a card)
-        if spellName.find('Enemy') == -1:
+
+        # after each click, move to a random spot over a random duration
+        # UNLESS we clicked an enemy, in which case we dont move
+        if 'Enemy' not in spellName:
             mouse.move(getRandomX(), getRandomY(), absolute = False, duration = getRandomDuration())
+
         time.sleep(0.5)
         success = True
 
-    # recursive calling to click on target if there is one
-    if target != None:
-        clickSpell(target)
-
     return success
 
+# given image name, moves to and clicks it
 def clickImage(imageName):
     moveToImage(imageName)
     mouse.click()
 
-# returns true if spell (image representing) is on screen, false otherwise
-def spellIsAvailable(spellName):
-    res, exists = locateImage(spellName)
+# returns true if image is on screen, false otherwise
+def imageIsAvailable(imageName):
+    res, exists = locateImage(imageName)
 
     if exists:
         return True
-    return False
+    #return False 
+
+    return True if exists else False
+
+# returns true if spell (image representing) is on screen, false otherwise
+def spellIsAvailable(spellName):
+    return imageIsAvailable(spellName)
 
 # returns true if enemy (image representing) is on screen, false otherwise
 def enemyAlive(enemyName):
     return spellIsAvailable(enemyName)
 
+# returns boolean for each enemy, alive -> true, dead -> false
 def getAllEnemiesLifeStatus():
     return enemyAlive('EnemyOne'), enemyAlive('EnemyTwo'), enemyAlive('EnemyThree'), enemyAlive('EnemyFour')
 
@@ -144,7 +147,7 @@ def getEnemyCount():
 
     return enemyOneAlive + enemyTwoAlive + enemyThreeAlive + enemyFourAlive
 
-# returns final enemy alive (if enemiesAlive > 1 then return first alive from left to right)
+# returns final enemy alive (if enemiesAlive > 1, then return first alive from left to right)
 def getLastSurvivingEnemy():
 
     enemyOneAlive, enemyTwoAlive, enemyThreeAlive, enemyFourAlive = getAllEnemiesLifeStatus()
@@ -160,8 +163,7 @@ def getLastSurvivingEnemy():
     
 # returns whether or not we are in card select, based on pass button existance
 def inCardSelect():
-    if spellIsAvailable('PassButton'):
-        #moveToImage('QuickChatIcon')
+    if imageIsAvailable('PassButton') or imageIsAvailable('PassButtonDark') or imageIsAvailable('PassButtonLit'):
         return True
     return False
 
@@ -176,17 +178,21 @@ def outOfBattle():
 # does everything required to cast the given spell, returns success as boolean
 def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
 
+    # default success is false
     success = False
     spellAvailable = spellIsAvailable(spellName)
 
+    # if item card or specifically no enchant requested, click spell without enchant
     if isItemCard or noEnchant:
         if spellAvailable:
             success = clickSpell(spellName)
 
+    # else enchant before hit
     else:
         enchantedSpellName = 'Enchanted{}'.format(spellName)
         enchantAvailable = spellIsAvailable(enchantedSpellName)
 
+        # click enchant then click spell
         if spellAvailable or enchantAvailable:
         
             if enchantAvailable:
@@ -197,11 +203,13 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
                 clickSpell(spellName)
                 success = clickSpell(enchantedSpellName)
     
+    # if there is a target and we clicked the spell, click target
     if target != None and success == True:
         clickSpell(target)
 
     return success
 
+# click aura if it exists
 def tryAura(spellName):
     return trySpell(spellName, noEnchant=True)
 
@@ -212,6 +220,7 @@ def pressReleaseKey(key, duration):
     time.sleep(duration)
     myKeyboard.release(key)
 
+# afk run forwards and in direction, default direction is left
 def afkRun(direction='left'):
     
     if direction == 'right':
@@ -230,6 +239,7 @@ def afkRun(direction='left'):
     time.sleep(0.1)
     myKeyboard.release(Key.alt_l)
     
+# setup for playing potion motion
 def potionMotionSetup():
 
     # open friends list
@@ -260,9 +270,12 @@ def potionMotionSetup():
     clickImage('MinigamePlayButton')
     time.sleep(1.5)
 
+# find tile given tile x and y
 def getTileLocation(tileX, tileY):
+    # tile (1,1) is upper left and tile (7,6) is lower right
+
     # upper left corner of upper left tile - 650 285
-    # bottom right corner of upper right tile - 1270 815
+    # bottom right corner of lower right tile - 1270 815
 
     initialX = 650
     initialY = 285
@@ -274,6 +287,7 @@ def getTileLocation(tileX, tileY):
 
     return x, y
 
+# play potion motion by moving tiles
 def playPotionMotion():
 
     time.sleep(1.5)
@@ -296,6 +310,7 @@ def playPotionMotion():
             mouse.drag(startX, startY, endX, endY, duration=0.05)
             time.sleep(0.05)
 
+# exit potion motion by clicking menu options
 def exitPotionMotion():
 
     clickImage('MinigameXButton')
@@ -307,6 +322,7 @@ def exitPotionMotion():
     clickImage('MinigameXButton')
     time.sleep(10)
 
+# use a potion if available
 def usePotion():
     res, isPot = locateImage('FullPotionBottle')
     if isPot:
@@ -316,6 +332,7 @@ def usePotion():
         print('Out of Potions!')
         #refillPotions()
 
+# take mark, allow for area loading time
 def takeMark():
     clickImage('TakeMarkButton')
     time.sleep(10)
