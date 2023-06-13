@@ -1,0 +1,3 @@
+from AutomationSetup import *
+
+printHealthManaInfo()

@@ -3,8 +3,15 @@ import pyautogui
 import mouse
 import random
 import time
+import numpy as nm  
+import pytesseract
+import cv2
+from PIL import ImageGrab
 
 myKeyboard = Controller()
+
+# monitor size: I dont intend on using this a lot, just in some cases
+MONITOR_DIMENSIONS = (1920, 1080)
 
 # gets image path given name
 def getImagePath(imageName):
@@ -61,16 +68,29 @@ def moveToImage(imageName, xOff=0, yOff=0):
     res, exists = locateImage(imageName)
 
     if exists:
-        spellLocation = pyautogui.center(res)
+        imageLocation = pyautogui.center(res)
 
         # add offset 
         # (cannot update tuple, so tuple>list>tuple)
-        temp = list(spellLocation)
+        temp = list(imageLocation)
         temp[0] += xOff
         temp[1] += yOff
-        spellLocation = tuple(temp)
+        imageLocation = tuple(temp)
 
-        pyautogui.moveTo(spellLocation, duration = getRandomDuration())
+
+        # there are some issues with two monitors, we'll move the 
+        # cursor back to the main monitor first, if it is beyond the boundaries
+
+        # current position of cursor
+        cursorX, cursorY = pyautogui.position()
+
+        # move back to main monitor bounds if outside
+        if (cursorX > MONITOR_DIMENSIONS[0] or cursorY > MONITOR_DIMENSIONS[1]):
+        
+            # move to top middle of monitor
+            pyautogui.moveTo((MONITOR_DIMENSIONS[0] / 2, 50), duration = getRandomDuration())
+
+        pyautogui.moveTo(imageLocation, duration = getRandomDuration())
         time.sleep(0.2)
         print(f'Clicked {imageName}!')
         return True
@@ -258,6 +278,8 @@ def playPotionMotion():
 
     time.sleep(1.5)
 
+    print('Playing Potion Motion...')
+
     # verticle movement
     for x in range(1, 8):
         startX, startY = getTileLocation(x, 1)
@@ -286,7 +308,13 @@ def exitPotionMotion():
     time.sleep(10)
 
 def usePotion():
-    clickImage('FullPotionBottle')
+    res, isPot = locateImage('FullPotionBottle')
+    if isPot:
+        clickImage('FullPotionBottle')
+        printHealthManaInfo()
+    else:
+        print('Out of Potions!')
+        #refillPotions()
 
 def takeMark():
     clickImage('TakeMarkButton')
@@ -297,12 +325,129 @@ def placeMark():
     time.sleep(1)
     
 def refillPotions():
-    usePotion()
-    
+
     potionMotionSetup()
-    playPotionMotion()
-    exitPotionMotion()
+
+    totalBottles = 4
+
+    for i in range(totalBottles):
+        playPotionMotion()
+        exitPotionMotion()
 
     takeMark()
     placeMark()
     afkRun()
+
+# returns true if s is valid mana in wizard101
+# must be in this format: int/int
+def isValidHealthManaStr(s):
+    
+    # if s has '/', split on it
+    if '/' in s:
+        currentMana, maxMana = s.split('/')
+        # return true if each side is int
+        if (currentMana.isdigit() and maxMana.isdigit()):
+            return True
+    return False
+
+# gets health info, assumes stat page is open (player push c)
+def getHealthInfo():
+    
+    # Path of tesseract executable
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    # ImageGrab-To capture the screen image in a loop. 
+    # Bbox used to capture a specific area.
+
+    cap = ImageGrab.grab(bbox = (525, 400, 700, 430))
+
+    img = nm.array(cap)
+
+    # comment/uncomment to hide/show window
+    #cv2.imshow("", cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
+
+    tesstr = pytesseract.image_to_string(
+        cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 
+        lang ='eng',
+        config='--psm 6')
+
+
+    # removing specific chars to clean up output
+    replaceChars = ' ,\n'
+    tesstr = tesstr.translate({ord(i): None for i in replaceChars})
+
+    # if valid string, get health values
+    if isValidHealthManaStr(tesstr):
+        
+        currentHealth, maxHealth = [int(i) for i in tesstr.split('/')]
+        percentHealth = (currentHealth / maxHealth) * 100
+        return currentHealth, maxHealth, percentHealth
+    else:
+        return -1, -1, -1
+
+# gets mana info, assumes stat page is open (player push c)
+def getManaInfo():
+    
+    # Path of tesseract executable
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    # ImageGrab-To capture the screen image in a loop. 
+    # Bbox used to capture a specific area.
+
+    cap = ImageGrab.grab(bbox = (755, 400, 880, 430))
+
+    img = nm.array(cap)
+
+    # comment/uncomment to hide/show window
+    #cv2.imshow("", cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
+
+    tesstr = pytesseract.image_to_string(
+        cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 
+        lang ='eng',
+        config='--psm 6')
+
+
+    # removing specific chars to clean up output
+    replaceChars = ' ,\n'
+    tesstr = tesstr.translate({ord(i): None for i in replaceChars})
+
+    # if valid string, get mana values
+    if isValidHealthManaStr(tesstr):
+        
+        currentMana, maxMana = [int(i) for i in tesstr.split('/')]
+        percentMana = (currentMana / maxMana) * 100
+        return currentMana, maxMana, percentMana
+    else:
+        return -1, -1, -1
+
+def printHealthManaInfo():
+
+    # opening character stat page
+    pressReleaseKey('c', getRandomDuration())
+    time.sleep(1)
+  
+    # getting health and mana info
+    currentHealth, maxHealth, percentHealth = getHealthInfo()
+    currentMana, maxMana, percentMana = getManaInfo()
+
+    # closing character stat page
+    pressReleaseKey('c', getRandomDuration())
+
+    # printing health info
+    if currentHealth == -1: # error case
+        print('ERROR: Health not visible')
+    else:
+        print(f'Current Health: {currentHealth}/{maxHealth} ({percentHealth:.2f}%)')
+    
+    # printing mana info
+    if currentMana == -1: # error case
+        print('ERROR: Mana not visible')
+    else:
+        print(f'Current Mana: {currentMana}/{maxMana} ({percentMana:.2f}%)')
+
+    # using potion if needed
+    # edit these numbers directly for now
+    if (currentHealth < 1000 and currentHealth != -1):
+        print('\nHealth too low! Using Potion!')
+        usePotion()
+    elif (currentMana < 10 and currentMana != -1):
+        print('\nMana too low! Using Potion!')
+        usePotion()

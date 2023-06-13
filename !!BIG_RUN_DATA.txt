@@ -1,0 +1,1014 @@
+Current Health: 7609/7609 (100.00%)
+Current Mana: 118/468 (25.21%)
+Battles Completed: 14
+Total Time Running: 722.024
+Average Run Time: 51.573
+This Run: 40.287
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 113/468 (24.15%)
+Battles Completed: 15
+Total Time Running: 769.324
+Average Run Time: 51.288
+This Run: 47.300
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 155/468 (33.12%)
+Battles Completed: 16
+Total Time Running: 842.748
+Average Run Time: 52.672
+This Run: 73.424
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 17
+Total Time Running: 903.603
+Average Run Time: 53.153
+This Run: 60.855
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 143/468 (30.56%)
+Battles Completed: 18
+Total Time Running: 963.450
+Average Run Time: 53.525
+This Run: 59.847
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 138/468 (29.49%)
+Battles Completed: 19
+Total Time Running: 1033.208
+Average Run Time: 54.379
+This Run: 69.758
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 20
+Total Time Running: 1123.922
+Average Run Time: 56.196
+This Run: 90.714
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 124/468 (26.50%)
+Battles Completed: 21
+Total Time Running: 1192.428
+Average Run Time: 56.782
+This Run: 68.506
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Clicked Epic!
+Clicked MaxLightningBats!
+Clicked EnchantedMaxLightningBats!
+Clicked EnemyTwo!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 117/468 (25.00%)
+Battles Completed: 22
+Total Time Running: 1277.619
+Average Run Time: 58.074
+This Run: 85.191
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 112/468 (23.93%)
+Battles Completed: 23
+Total Time Running: 1317.840
+Average Run Time: 57.297
+This Run: 40.221
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 107/468 (22.86%)    
+Battles Completed: 24
+Total Time Running: 1358.229
+Average Run Time: 56.593    
+This Run: 40.389
+
+Failed to find PassButton
+Clicked Epic!
+Clicked GlowbugSquall!
+Clicked EnchantedGlowbugSquall!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 102/468 (21.79%)     
+Battles Completed: 25
+Total Time Running: 1491.283
+Average Run Time: 59.651
+This Run: 133.054
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Failed to find PassButton
+Current Health: 7609/7609 (100.00%)
+Current Mana: 97/468 (20.73%)
+
+Mana too low! Using Potion!
+Clicked FullPotionBottle!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 468/468 (100.00%)
+Battles Completed: 26
+Total Time Running: 1534.641
+Average Run Time: 59.025
+This Run: 43.357
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Failed to find PassButton
+Current Health: 7609/7609 (100.00%)
+Current Mana: 463/468 (98.93%)
+Battles Completed: 27
+Total Time Running: 1592.739
+Average Run Time: 58.990
+This Run: 58.099
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 458/468 (97.86%)
+Battles Completed: 28
+Total Time Running: 1638.125
+Average Run Time: 58.504
+This Run: 45.385
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Clicked GlowbugSquall!
+Clicked EnchantedGlowbugSquall!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 453/468 (96.79%)
+Battles Completed: 29
+Total Time Running: 1699.528
+Average Run Time: 58.604
+This Run: 61.404
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 448/468 (95.73%)
+Battles Completed: 30
+Total Time Running: 1773.174
+Average Run Time: 59.106
+This Run: 73.645
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 443/468 (94.66%)
+Battles Completed: 31
+Total Time Running: 1819.186
+Average Run Time: 58.683
+This Run: 46.012
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 438/468 (93.59%)
+Battles Completed: 32
+Total Time Running: 1870.657
+Average Run Time: 58.458
+This Run: 51.471
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 433/468 (92.52%)
+Battles Completed: 33
+Total Time Running: 1922.441
+Average Run Time: 58.256
+This Run: 51.784
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 428/468 (91.45%)
+Battles Completed: 34
+Total Time Running: 1962.501
+Average Run Time: 57.721
+This Run: 40.061
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 423/468 (90.38%)
+Battles Completed: 35
+Total Time Running: 2033.977
+Average Run Time: 58.114
+This Run: 71.475
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Clicked Epic!
+Failed to find MaxLightningBats
+Failed to find EnchantedMaxLightningBats
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Failed to find PassButton
+Clicked Epic!
+Clicked MaxLightningBats!
+Clicked EnchantedMaxLightningBats!
+Clicked EnemyTwo!
+Current Health: 7362/7609 (96.75%)
+Current Mana: 414/468 (88.46%)
+Battles Completed: 36
+Total Time Running: 2134.872
+Average Run Time: 59.302
+This Run: 100.896
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 409/468 (87.39%)
+Battles Completed: 37
+Total Time Running: 2196.467
+Average Run Time: 59.364
+This Run: 61.595
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 404/468 (86.32%)
+Battles Completed: 38
+Total Time Running: 2236.746
+Average Run Time: 58.862
+This Run: 40.279
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 399/468 (85.26%)
+Battles Completed: 39
+Total Time Running: 2277.031
+Average Run Time: 58.385
+This Run: 40.285
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Failed to find Tempest
+Failed to find EnchantedTempest
+Failed to find PassButton
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+ERROR: Mana not visible
+Battles Completed: 40
+Total Time Running: 2363.802
+Average Run Time: 59.095
+This Run: 86.772
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 387/468 (82.69%)
+Battles Completed: 41
+Total Time Running: 2403.862
+Average Run Time: 58.631
+This Run: 40.060
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 382/468 (81.62%)
+Battles Completed: 42
+Total Time Running: 2443.993
+Average Run Time: 58.190
+This Run: 40.131
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 377/468 (80.56%)
+Battles Completed: 43
+Total Time Running: 2495.435
+Average Run Time: 58.033
+This Run: 51.442
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 372/468 (79.49%)
+Battles Completed: 44
+Total Time Running: 2538.382
+Average Run Time: 57.690
+This Run: 42.947
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 367/468 (78.42%)
+Battles Completed: 45
+Total Time Running: 2595.511
+Average Run Time: 57.678
+This Run: 57.130
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 362/468 (77.35%)
+Battles Completed: 46
+Total Time Running: 2668.913
+Average Run Time: 58.020
+This Run: 73.402
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 355/468 (75.85%)
+Battles Completed: 47
+Total Time Running: 2734.333
+Average Run Time: 58.177
+This Run: 65.420
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 350/468 (74.79%)
+Battles Completed: 48
+Total Time Running: 2774.800
+Average Run Time: 57.808
+This Run: 40.467
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Failed to find PassButton
+Current Health: 7278/7609 (95.65%)
+Current Mana: 345/468 (73.72%)
+Battles Completed: 49
+Total Time Running: 2821.697
+Average Run Time: 57.586
+This Run: 46.897
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 387/468 (82.69%)
+Battles Completed: 50
+Total Time Running: 2862.068
+Average Run Time: 57.241
+This Run: 40.371
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 382/468 (81.62%)
+Battles Completed: 51
+Total Time Running: 2902.149
+Average Run Time: 56.905
+This Run: 40.081
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 377/468 (80.56%)
+Battles Completed: 52
+Total Time Running: 2943.523
+Average Run Time: 56.606
+This Run: 41.374
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+ERROR: Mana not visible
+Battles Completed: 53
+Total Time Running: 2983.886
+Average Run Time: 56.300
+This Run: 40.363
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 367/468 (78.42%)
+Battles Completed: 54
+Total Time Running: 3023.959
+Average Run Time: 55.999
+This Run: 40.073
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 362/468 (77.35%)
+Battles Completed: 55
+Total Time Running: 3063.991
+Average Run Time: 55.709
+This Run: 40.032
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 357/468 (76.28%)
+Battles Completed: 56
+Total Time Running: 3108.250
+Average Run Time: 55.504
+This Run: 44.259
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 352/468 (75.21%)
+Battles Completed: 57
+Total Time Running: 3159.517
+Average Run Time: 55.430
+This Run: 51.268
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7362/7609 (96.75%)
+Current Mana: 347/468 (74.15%)
+Battles Completed: 58
+Total Time Running: 3216.933
+Average Run Time: 55.464
+This Run: 57.416
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 59
+Total Time Running: 3269.451
+Average Run Time: 55.414
+This Run: 52.518
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 337/468 (72.01%)
+Battles Completed: 60
+Total Time Running: 3326.256
+Average Run Time: 55.438
+This Run: 56.805
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 332/468 (70.94%)
+Battles Completed: 61
+Total Time Running: 3386.057
+Average Run Time: 55.509
+This Run: 59.800
+
+Clicked Epic!
+Failed to find Tempest
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7412/7609 (97.41%)
+Current Mana: 325/468 (69.44%)
+Battles Completed: 62
+Total Time Running: 3490.019
+Average Run Time: 56.291
+This Run: 103.962
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 320/468 (68.38%)
+Battles Completed: 63
+Total Time Running: 3562.639
+Average Run Time: 56.550
+This Run: 72.621
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Clicked Epic!
+Clicked MaxLightningBats!
+Clicked EnchantedMaxLightningBats!
+Clicked EnemyTwo!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 313/468 (66.88%)
+Battles Completed: 64
+Total Time Running: 3627.877
+Average Run Time: 56.686
+This Run: 65.237
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 308/468 (65.81%)
+Battles Completed: 65
+Total Time Running: 3688.392
+Average Run Time: 56.744
+This Run: 60.516
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 303/468 (64.74%)
+Battles Completed: 66
+Total Time Running: 3749.016
+Average Run Time: 56.803
+This Run: 60.624
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 298/468 (63.68%)
+Battles Completed: 67
+Total Time Running: 3830.606
+Average Run Time: 57.173
+This Run: 81.590
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 293/468 (62.61%)
+Battles Completed: 68
+Total Time Running: 3904.235
+Average Run Time: 57.415
+This Run: 73.629
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Clicked Epic!
+Failed to find MaxLightningBats
+Failed to find EnchantedMaxLightningBats
+Clicked Epic!
+Failed to find Tempest
+Failed to find EnchantedTempest
+Clicked PassButton!
+Current Health: 7268/7609 (95.52%)
+Current Mana: 286/468 (61.11%)
+Battles Completed: 69
+Total Time Running: 4021.595
+Average Run Time: 58.284
+This Run: 117.360
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7268/7609 (95.52%)
+Current Mana: 281/468 (60.04%)
+Battles Completed: 70
+Total Time Running: 4071.662
+Average Run Time: 58.167
+This Run: 50.067
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 71
+Total Time Running: 4111.854
+Average Run Time: 57.913
+This Run: 40.192
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+ERROR: Mana not visible
+Battles Completed: 72
+Total Time Running: 4151.935
+Average Run Time: 57.666
+This Run: 40.082
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 266/468 (56.84%)
+Battles Completed: 73
+Total Time Running: 4193.669
+Average Run Time: 57.448
+This Run: 41.734
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 261/468 (55.77%)
+Battles Completed: 74
+Total Time Running: 4233.483
+Average Run Time: 57.209
+This Run: 39.814
+
+Clicked Epic!
+Failed to find Tempest
+Failed to find EnchantedTempest
+Failed to find PassButton
+Current Health: 7609/7609 (100.00%)
+Current Mana: 256/468 (54.70%)
+Battles Completed: 75
+Total Time Running: 4271.923
+Average Run Time: 56.959
+This Run: 38.439
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 76
+Total Time Running: 4331.221
+Average Run Time: 56.990
+This Run: 59.298
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 6947/7609 (91.30%)
+Current Mana: 246/468 (52.56%)
+Battles Completed: 77
+Total Time Running: 4389.129
+Average Run Time: 57.002
+This Run: 57.908
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 78
+Total Time Running: 4463.949
+Average Run Time: 57.230
+This Run: 74.820
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 6369/7609 (83.70%)
+Current Mana: 236/468 (50.43%)
+Battles Completed: 79
+Total Time Running: 4520.564
+Average Run Time: 57.222
+This Run: 56.614
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 231/468 (49.36%)
+Battles Completed: 80
+Total Time Running: 4586.543
+Average Run Time: 57.332
+This Run: 65.979
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 226/468 (48.29%)
+Battles Completed: 81
+Total Time Running: 4645.285
+Average Run Time: 57.349
+This Run: 58.742
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 221/468 (47.22%)
+Battles Completed: 82
+Total Time Running: 4687.700
+Average Run Time: 57.167
+This Run: 42.414
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 216/468 (46.15%)
+Battles Completed: 83
+Total Time Running: 4737.380
+Average Run Time: 57.077
+This Run: 49.681
+
+Clicked Epic!
+Failed to find Tempest
+Failed to find EnchantedTempest
+Failed to find PassButton
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 211/468 (45.09%)
+Battles Completed: 84
+Total Time Running: 4782.469
+Average Run Time: 56.934
+This Run: 45.089
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 206/468 (44.02%)
+Battles Completed: 85
+Total Time Running: 4823.795
+Average Run Time: 56.751
+This Run: 41.326
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 201/468 (42.95%)
+Battles Completed: 86
+Total Time Running: 4866.387
+Average Run Time: 56.586
+This Run: 42.592
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 196/468 (41.88%)
+Battles Completed: 87
+Total Time Running: 4911.533
+Average Run Time: 56.454
+This Run: 45.146
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7362/7609 (96.75%)
+Current Mana: 191/468 (40.81%)
+Battles Completed: 88
+Total Time Running: 4967.131
+Average Run Time: 56.445
+This Run: 55.598
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7362/7609 (96.75%)
+Current Mana: 186/468 (39.74%)
+Battles Completed: 89
+Total Time Running: 5018.465
+Average Run Time: 56.387
+This Run: 51.333
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 90
+Total Time Running: 5078.947
+Average Run Time: 56.433
+This Run: 60.482
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 176/468 (37.61%)
+Battles Completed: 91
+Total Time Running: 5119.048
+Average Run Time: 56.253
+This Run: 40.101
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 171/468 (36.54%)
+Battles Completed: 92
+Total Time Running: 5171.294
+Average Run Time: 56.210
+This Run: 52.246
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7412/7609 (97.41%)
+Current Mana: 166/468 (35.47%)
+Battles Completed: 93
+Total Time Running: 5227.615
+Average Run Time: 56.211
+This Run: 56.321
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+ERROR: Health not visible
+ERROR: Mana not visible
+Battles Completed: 94
+Total Time Running: 5276.966
+Average Run Time: 56.138
+This Run: 49.352
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7215/7609 (94.82%)
+Current Mana: 156/468 (33.33%)
+Battles Completed: 95
+Total Time Running: 5337.505
+Average Run Time: 56.184
+This Run: 60.539
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 6884/7609 (90.47%)
+Current Mana: 151/468 (32.26%)
+Battles Completed: 96
+Total Time Running: 5387.725
+Average Run Time: 56.122
+This Run: 50.220
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 6884/7609 (90.47%)
+Current Mana: 146/468 (31.20%)
+Battles Completed: 97
+Total Time Running: 5429.570
+Average Run Time: 55.975
+This Run: 41.845
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 6884/7609 (90.47%)
+Current Mana: 141/468 (30.13%)
+Battles Completed: 98
+Total Time Running: 5475.457
+Average Run Time: 55.872
+This Run: 45.886
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 136/468 (29.06%)
+Battles Completed: 99
+Total Time Running: 5533.487
+Average Run Time: 55.894
+This Run: 58.030
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7278/7609 (95.65%)
+Current Mana: 129/468 (27.56%)
+Battles Completed: 100
+Total Time Running: 5595.261
+Average Run Time: 55.953
+This Run: 61.774
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Clicked PassButton!
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 124/468 (26.50%)
+Battles Completed: 101
+Total Time Running: 5645.602
+Average Run Time: 55.897
+This Run: 50.342
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 119/468 (25.43%)
+Battles Completed: 102
+Total Time Running: 5705.103
+Average Run Time: 55.932
+This Run: 59.501
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 114/468 (24.36%)
+Battles Completed: 103
+Total Time Running: 5764.747
+Average Run Time: 55.968
+This Run: 59.644
+
+Clicked Epic!
+Clicked Tempest!
+Failed to find EnchantedTempest
+Failed to find PassButton
+Current Health: 7419/7609 (97.50%)
+Current Mana: 109/468 (23.29%)
+Battles Completed: 104
+Total Time Running: 5828.221
+Average Run Time: 56.041
+This Run: 63.473
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7419/7609 (97.50%)
+Current Mana: 104/468 (22.22%)
+Battles Completed: 105
+Total Time Running: 5879.253
+Average Run Time: 55.993
+This Run: 51.032
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 99/468 (21.15%)
+Battles Completed: 106
+Total Time Running: 5929.897
+Average Run Time: 55.942
+This Run: 50.644
+
+Clicked Epic!
+Clicked Tempest!
+Clicked EnchantedTempest!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 94/468 (20.09%)
+
+Mana too low! Using Potion!
+Clicked FullPotionBottle!
+Current Health: 7609/7609 (100.00%)
+Current Mana: 468/468 (100.00%)
+Battles Completed: 107
+Total Time Running: 5984.796
+Average Run Time: 55.933
+This Run: 54.900

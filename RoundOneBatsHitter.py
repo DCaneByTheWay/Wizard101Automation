@@ -14,32 +14,27 @@ isBattleOccuring = False
 start = time.time_ns()
 totalSeconds = 0
 
-#shadHit = 'SoundOfMusicology'
-shadHit ='GlowbugSquall'
-
 while True:
+
     time.sleep(1)
 
     if inCardSelect():
         if not isBattleOccuring:
             isBattleOccuring = True
-
-        if tryAura('Frenzy'): continue
-
-        if trySpell(shadHit):
-            hasHit = True 
+        
+        if trySpell('GlowbugSquall'): 
+            hasHit = True
             continue
 
-        if trySpell('StormLord'):
-            hasHit = True 
+        if getEnemyCount() == 1 and hasHit:
+            if trySpell('MaxLightningBats', getLastSurvivingEnemy()): continue
+        
+        if trySpell('Tempest'): 
+            hasHit = True
             continue
-
-        if hasHit:
-            trySpell('Tempest')
-            continue
-
+        
         passRound()
-
+        
     # end of battle logic
     if outOfBattle() and isBattleOccuring:
         # reset vars
