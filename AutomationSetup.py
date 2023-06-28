@@ -21,8 +21,15 @@ def getImagePath(imageName):
 # returns tuple, the image on screen, and a boolean representing whether or not it exists
 def locateImage(imageName, isEnchanted = False):
 
+    '''
+    it looks random, but after extensive testing i've found
+    that 91% confidence for regular spells and 76% confidence 
+    for enchanted spells seems to be the most fitting, but there 
+    may still be mistakes that are made
+    '''
+
     # high confidence by default
-    confidenceLvl = 0.9
+    confidenceLvl = 0.91
     
     # if spell name contains enchanted
     if 'Enchanted' in imageName:
@@ -30,7 +37,7 @@ def locateImage(imageName, isEnchanted = False):
 
     # lower confidence level if enchanted due to shiny card making it harder to find
     if isEnchanted:
-        confidenceLvl = 0.7
+        confidenceLvl = 0.76
 
     # get and return location of image, and boolean of success    
     res = pyautogui.locateOnScreen(getImagePath(imageName), grayscale=False, confidence=confidenceLvl)
@@ -96,7 +103,7 @@ def moveToImage(imageName, xOff=0, yOff=0):
         return False
 
 # finds and clicks spell from name
-def clickSpell(spellName, target=None):
+def clickSpell(spellName):
     imageFound = moveToImage(spellName)
     success = False
 
@@ -123,10 +130,10 @@ def imageIsAvailable(imageName):
     res, exists = locateImage(imageName)
 
     if exists:
+        #print('found', imageName)
         return True
-    #return False 
-
-    return True if exists else False
+    #print('could not find', imageName)
+    return False 
 
 # returns true if spell (image representing) is on screen, false otherwise
 def spellIsAvailable(spellName):
@@ -173,11 +180,12 @@ def passRound():
 
 # returns whether or not we are out of battle, based on pet icon button existance
 def outOfBattle():
-    return True if spellIsAvailable('PetIcon') else False
+    return True if imageIsAvailable('PetIcon') else False
 
 # does everything required to cast the given spell, returns success as boolean
-def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
-
+# default enchant is epic, but you can overload with other enchants
+def trySpell(spellName, target=None, isItemCard=False, noEnchant=False, enchant='Epic'):
+    
     # default success is false
     success = False
     spellAvailable = spellIsAvailable(spellName)
@@ -199,7 +207,7 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False):
                 success = clickSpell(enchantedSpellName)
 
             elif spellAvailable:
-                clickSpell('Epic')
+                clickSpell(enchant)
                 clickSpell(spellName)
                 success = clickSpell(enchantedSpellName)
     
@@ -261,7 +269,7 @@ def potionMotionSetup():
     time.sleep(10)
 
     # enter potion motion
-    pressReleaseKey('x', 0.2)
+    pressX()
     time.sleep(1.5)
 
     clickImage('PotionMotionButton')
@@ -462,9 +470,56 @@ def printHealthManaInfo():
 
     # using potion if needed
     # edit these numbers directly for now
-    if (currentHealth < 1000 and currentHealth != -1):
+    if (currentHealth < 2000 and currentHealth != -1):
         print('\nHealth too low! Using Potion!')
         usePotion()
     elif (currentMana < 10 and currentMana != -1):
         print('\nMana too low! Using Potion!')
         usePotion()
+
+def pressX():
+    pressReleaseKey('x', 0.2)
+    print('Pressed X!')
+
+# look for x icon and click x, but only on reagents, chests, and mounts
+def lookForX():
+
+    # if X icon is there at all
+    if imageIsAvailable('PressXKey'):
+
+        # press X on reagents
+        if imageIsAvailable('PressXCollectReagent'):
+            pressX()
+
+        # press X on wooden chests only
+        if imageIsAvailable('PressXCollectChest'):
+            if not imageIsAvailable('SilverChest'):
+                pressX()
+
+        # press X on mounts
+        if imageIsAvailable('PressXRideMount'):
+            pressX()
+
+
+# look for tp request and tp to that person
+def lookForTpRequest():
+
+    if imageIsAvailable('TeaCupEmoji'):
+
+        if not imageIsAvailable('FriendIconDM'):
+            pressReleaseKey('o', 0.2)
+
+        moveToImage('FriendIconDM', xOff=50)
+        mouse.click()
+        time.sleep(1)
+
+        clickImage('GoToLocationIcon')
+        time.sleep(0.5)
+
+        clickImage('YesButton')
+        time.sleep(0.5)
+
+        pressReleaseKey('o', 0.2)
+        pressReleaseKey('f', 0.2)
+
+        time.sleep(5)
