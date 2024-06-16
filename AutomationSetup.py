@@ -29,7 +29,7 @@ def locateImage(imageName, isEnchanted = False):
     '''
 
     # high confidence by default
-    confidenceLvl = 0.91
+    confidenceLvl = 0.80 # was 91
     
     # if spell name contains enchanted
     if 'Enchanted' in imageName:
