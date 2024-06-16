@@ -28,6 +28,10 @@ while True:
 
         if getEnemyCount() == 1 and hasHit:
             if trySpell('MaxLightningBats', getLastSurvivingEnemy()): continue
+
+        if trySpell('BunyipsRage'):
+            hasHit = True
+            continue
         
         if trySpell('Tempest'): 
             hasHit = True
