@@ -8,6 +8,7 @@ import pytesseract
 import cv2
 from PIL import ImageGrab
 
+DISPLAY_WINDOW = False
 myKeyboard = Controller()
 
 # monitor size: I dont intend on using this a lot, just in some cases
@@ -42,6 +43,21 @@ def locateImage(imageName, isEnchanted = False):
     # get and return location of image, and boolean of success    
     res = pyautogui.locateOnScreen(getImagePath(imageName), grayscale=False, confidence=confidenceLvl)
     exists = False if res == None else True
+
+    if DISPLAY_WINDOW and exists:
+        windowName = imageName + "BIGFATBALLS"
+        box = (res.left, res.top, res.left + res.width, res.top + res.height)
+        cap = ImageGrab.grab(bbox=box)
+        img = nm.array(cap)
+        cv2.destroyAllWindows()
+        cv2.imshow(windowName, cv2.cvtColor(img, 2))
+        cv2.waitKey(1250)
+        #cv2.moveWindow(windowName, 2700, 700)
+        x = res.left
+        yBuffer = 200
+        y = res.top + yBuffer if res.top + yBuffer < 1080 else res.top - yBuffer
+        cv2.moveWindow(windowName, x, y)
+        cv2.setWindowProperty(windowName, cv2.WND_PROP_TOPMOST, 1)
 
     return res, exists
 
