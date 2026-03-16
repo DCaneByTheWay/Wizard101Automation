@@ -68,7 +68,7 @@ def locateImage(imageName, isEnchanted = False):
     exists = False if res == None else True
 
     if DISPLAY_WINDOW and exists:
-        windowName = imageName + "BIGFATBALLS"
+        windowName = f'{imageName} window'
         box = (res.left, res.top, res.left + res.width, res.top + res.height)
         cap = ImageGrab.grab(bbox=box)
         img = nm.array(cap)
@@ -259,6 +259,10 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False, enchant=
 # click aura if it exists
 def tryAura(spellName):
     return trySpell(spellName, noEnchant=True)
+
+# try to cast blade
+def tryBlade(spellName, target='AllyOne', isItemCard=False, noEnchant=False, enchant='SharpenedBlade'):
+    return trySpell(spellName, target, isItemCard, noEnchant, enchant)
 
 # tries to weave shadow spells
 def weaveShadow(spellName, shadowCreature):

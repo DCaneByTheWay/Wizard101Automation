@@ -29,10 +29,9 @@ while True:
             hasHit = True 
             continue
 
-        if tryAura('Frenzy'): continue
+        if tryBlade('ItemStormBlade', isItemCard=True): continue
 
-        #if trySpell('ItemStormBlade', isItemCard=True, target='AllyOne'): continue
-        if trySpell('StormBlade', noEnchant=True, target='AllyOne'): continue
+        if tryAura('Frenzy'): continue
 
         if trySpell('Sirens'):
             hasHit = True 
