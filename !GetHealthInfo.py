@@ -1,3 +1,0 @@
-from AutomationSetup import *
-
-printHealthManaInfo()
