@@ -145,7 +145,7 @@ def clickSpell(spellName):
 
         # after each click, move to a random spot over a random duration
         # UNLESS we clicked an enemy, in which case we dont move
-        if 'Enemy' not in spellName:
+        if 'Enemy' not in spellName and 'Ally' not in spellName:
             mouse.move(getRandomX(), getRandomY(), absolute = False, duration = getRandomDuration())
 
         time.sleep(0.5)

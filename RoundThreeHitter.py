@@ -31,7 +31,10 @@ while True:
 
         if tryAura('Frenzy'): continue
 
-        if trySpell('StormLord'):
+        #if trySpell('ItemStormBlade', isItemCard=True, target='AllyOne'): continue
+        if trySpell('StormBlade', noEnchant=True, target='AllyOne'): continue
+
+        if trySpell('Sirens'):
             hasHit = True 
             continue
 
@@ -43,9 +46,6 @@ while True:
 
     # outside of battle logic
     if outOfBattle():
-
-        #lookForX()
-        #lookForTpRequest()
 
         # end of battle logic
         if isBattleOccuring:
