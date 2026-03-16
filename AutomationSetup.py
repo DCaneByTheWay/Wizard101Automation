@@ -3,6 +3,7 @@ import pyautogui
 import mouse
 import random
 import time
+import datetime
 import numpy as nm  
 import pytesseract
 import cv2
@@ -589,3 +590,20 @@ def lookForTpRequest():
         pressReleaseKey('f', 0.2)
 
         time.sleep(5)
+
+def printAutomationInfo(start, totalSeconds, battlesCompleted):
+    print('Battles Completed:', battlesCompleted)
+    # get time
+    currentTime = time.time_ns()
+    totalNano = totalSeconds * 1000000000
+    runTime = (currentTime - start - totalNano) / 1000000000 
+    totalSeconds += runTime
+    avg = totalSeconds / battlesCompleted
+    # format time to print
+    formattedTime = str(datetime.timedelta(seconds=totalSeconds))
+    formattedTime = formattedTime[0:len(formattedTime)-3]
+    # print time
+    print(f'Total Time Running: {formattedTime}')
+    print(f'Average Run Time: {avg:.3f}')
+    print(f'This Run: {runTime:.3f}')
+    print()

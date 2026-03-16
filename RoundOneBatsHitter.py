@@ -1,5 +1,4 @@
 import time
-import datetime
 from AutomationSetup import *
 
 time.sleep(1.5)
@@ -47,22 +46,9 @@ while True:
         isBattleOccuring = False
         # run to leave iframes faster
         afkRun()
-        # print health mana
-        printHealthManaInfo()
         # update battles completed
         battlesCompleted += 1
-        print('Battles Completed:', battlesCompleted)
-        # get time
-        currentTime = time.time_ns()
-        totalNano = totalSeconds * 1000000000
-        runTime = (currentTime - start - totalNano) / 1000000000 
-        totalSeconds += runTime
-        avg = totalSeconds / battlesCompleted
-        # format time to print
-        formattedTime = str(datetime.timedelta(seconds=totalSeconds))
-        formattedTime = formattedTime[0:len(formattedTime)-3]
-        # print time
-        print(f'Total Time Running: {formattedTime}')
-        print(f'Average Run Time: {avg:.3f}')
-        print(f'This Run: {runTime:.3f}')
-        print()
+        # print health mana info
+        printHealthManaInfo()
+        # print additional info
+        printAutomationInfo(start, totalSeconds, battlesCompleted)
