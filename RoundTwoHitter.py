@@ -14,6 +14,7 @@ isBattleOccuring = False
 start = time.time_ns()
 totalSeconds = 0
 
+# uncomment shadhit you want to use
 shadHit = 'SoundOfMusicology'
 #shadHit ='GlowbugSquall'
 
@@ -24,11 +25,11 @@ while True:
         if not isBattleOccuring:
             isBattleOccuring = True
 
-        if tryAura('Frenzy'): continue
-
-        if trySpell(shadHit):
+        if tryShadowSpell(shadHit):
             hasHit = True 
             continue
+
+        if tryAura('Frenzy'): continue
 
         if trySpell('StormLord'):
             hasHit = True 

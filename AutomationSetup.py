@@ -8,11 +8,19 @@ import pytesseract
 import cv2
 from PIL import ImageGrab
 
-DISPLAY_WINDOW = False
 myKeyboard = Controller()
+
+# set to true to show spell images when found, false to not show them. Testing purposes.
+DISPLAY_WINDOW = False
 
 # monitor size: I dont intend on using this a lot, just in some cases
 MONITOR_DIMENSIONS = (1920, 1080)
+
+# dictionary of shadow spells before and after woven
+shadowWeaveDict = {
+    'GlowbugSquall': 'Gloambugs!',
+    'SoundOfMusicology': 'ShadeOfMusicology',
+}
 
 # gets image path given name
 def getImagePath(imageName):
@@ -30,15 +38,24 @@ def locateImage(imageName, isEnchanted = False):
     '''
 
     # high confidence by default
-    confidenceLvl = 0.80 # was 91
+    confidenceLvl = 0.85 # was 91
     
     # if spell name contains enchanted
     if 'Enchanted' in imageName:
         isEnchanted = True
 
+    # if spell name contains shadow weave variant, then it is a shad hit
+    isShad = False
+    if imageName in shadowWeaveDict.values():
+        isShad = True
+
     # lower confidence level if enchanted due to shiny card making it harder to find
     if isEnchanted:
         confidenceLvl = 0.76
+
+    # higher confidence level if shad due to darker hard making it too similar to grayed out cards
+    if isShad:
+        confidenceLvl = 0.91
 
     # get and return location of image, and boolean of success    
     res = pyautogui.locateOnScreen(getImagePath(imageName), grayscale=False, confidence=confidenceLvl)
@@ -236,6 +253,39 @@ def trySpell(spellName, target=None, isItemCard=False, noEnchant=False, enchant=
 # click aura if it exists
 def tryAura(spellName):
     return trySpell(spellName, noEnchant=True)
+
+# tries to weave shadow spells
+def weaveShadow(spellName, shadowCreature):
+    # weave shadow creature and spell while both are available
+    while spellIsAvailable(spellName) and spellIsAvailable(shadowCreature):
+        clickSpell(shadowCreature)
+        success = clickSpell(spellName)
+
+        # print success
+        if success:
+            print(f'Wove {getShadowWeaveVariant(spellName)}!')
+
+# returns the shadow weave variant of the spell
+def getShadowWeaveVariant(spellName):
+    return shadowWeaveDict[spellName]
+
+# weaves all available shadow spells and tries shadow spell
+def tryShadowSpell(spellName, shadowCreature='DarkShrike', target=None):
+
+    # weave all shadow available shadow spells
+    weaveShadow(spellName, shadowCreature)
+
+    # get shadow weave variant of spell name
+    shadowWeaveVariant = getShadowWeaveVariant(spellName)
+    enchantedshadowWeaveVariant = 'Enchanted{}'.format(shadowWeaveVariant)
+
+    # if either the shadow weave variant or enchanted shadow weave variant is available
+    isShadHitReady = spellIsAvailable(shadowWeaveVariant) or spellIsAvailable(enchantedshadowWeaveVariant)
+
+    # then try to cast spell
+    if isShadHitReady:
+        return trySpell(shadowWeaveVariant, target)
+    return False
 
 # presses key for duration
 def pressReleaseKey(key, duration):

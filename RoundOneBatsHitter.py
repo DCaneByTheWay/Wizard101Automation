@@ -22,7 +22,7 @@ while True:
         if not isBattleOccuring:
             isBattleOccuring = True
         
-        if trySpell('GlowbugSquall'): 
+        if tryShadowSpell('GlowbugSquall'): 
             hasHit = True
             continue
 
