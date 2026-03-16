@@ -1,0 +1,8 @@
+pynput
+pyautogui
+mouse
+numpy
+opencv-python
+Pillow
+pytest
+pytest-mock
