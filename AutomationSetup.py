@@ -17,6 +17,11 @@ DISPLAY_WINDOW = False
 # monitor size: I dont intend on using this a lot, just in some cases
 MONITOR_DIMENSIONS = (1920, 1080)
 
+# base confidence levels
+BASE_CONFIDENCE = 0.85 # was 91
+ENCHANTED_CONFIDENCE = 0.76
+SHADOW_CONFIDENCE = 0.89
+
 # dictionary of shadow spells before and after woven
 shadowWeaveDict = {
     'GlowbugSquall': 'Gloambugs!',
@@ -39,7 +44,7 @@ def locateImage(imageName, isEnchanted = False):
     '''
 
     # high confidence by default
-    confidenceLvl = 0.85 # was 91
+    confidenceLvl = BASE_CONFIDENCE # was 91
     
     # if spell name contains enchanted
     if 'Enchanted' in imageName:
@@ -52,11 +57,11 @@ def locateImage(imageName, isEnchanted = False):
 
     # lower confidence level if enchanted due to shiny card making it harder to find
     if isEnchanted:
-        confidenceLvl = 0.76
+        confidenceLvl = ENCHANTED_CONFIDENCE
 
     # higher confidence level if shad due to darker hard making it too similar to grayed out cards
     if isShad:
-        confidenceLvl = 0.91
+        confidenceLvl = SHADOW_CONFIDENCE
 
     # get and return location of image, and boolean of success    
     res = pyautogui.locateOnScreen(getImagePath(imageName), grayscale=False, confidence=confidenceLvl)
