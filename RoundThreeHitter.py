@@ -59,4 +59,4 @@ while True:
             printHealthManaInfo()
             # print additional info
             currentTime = time.time_ns()
-            totalSeconds = printAutomationInfo(start, totalSeconds, battlesCompleted)
+            totalSeconds = printAutomationInfo(start, totalSeconds, currentTime, battlesCompleted)
