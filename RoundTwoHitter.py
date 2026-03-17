@@ -59,4 +59,4 @@ while True:
             # print health mana info
             printHealthManaInfo()
             # print additional info
-            printAutomationInfo(start, totalSeconds, battlesCompleted)
+            totalSeconds = printAutomationInfo(start, totalSeconds, battlesCompleted)

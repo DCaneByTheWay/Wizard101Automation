@@ -287,10 +287,10 @@ def tryShadowSpell(spellName, shadowCreature='DarkShrike', target=None):
 
     # get shadow weave variant of spell name
     shadowWeaveVariant = getShadowWeaveVariant(spellName)
-    enchantedshadowWeaveVariant = 'Enchanted{}'.format(shadowWeaveVariant)
+    enchantedShadowWeaveVariant = 'Enchanted{}'.format(shadowWeaveVariant)
 
     # if either the shadow weave variant or enchanted shadow weave variant is available
-    isShadHitReady = spellIsAvailable(shadowWeaveVariant) or spellIsAvailable(enchantedshadowWeaveVariant)
+    isShadHitReady = spellIsAvailable(shadowWeaveVariant) or spellIsAvailable(enchantedShadowWeaveVariant)
 
     # then try to cast spell
     if isShadHitReady:
@@ -600,10 +600,9 @@ def lookForTpRequest():
 
         time.sleep(5)
 
-def printAutomationInfo(start, totalSeconds, battlesCompleted):
+def printAutomationInfo(start, totalSeconds, currentTime, battlesCompleted):
     print('Battles Completed:', battlesCompleted)
     # get time
-    currentTime = time.time_ns()
     totalNano = totalSeconds * 1000000000
     runTime = (currentTime - start - totalNano) / 1000000000 
     totalSeconds += runTime
@@ -616,3 +615,4 @@ def printAutomationInfo(start, totalSeconds, battlesCompleted):
     print(f'Average Run Time: {avg:.3f}')
     print(f'This Run: {runTime:.3f}')
     print()
+    return totalSeconds
